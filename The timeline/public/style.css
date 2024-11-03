@@ -1,0 +1,32 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 95%;
+    margin: 0px auto;
+    padding: 1rem;
+}
+
+h1{
+    border-bottom: 1px, solid, black;
+    margin-bottom: 30px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.post h3{
+    color: rgb(139, 21, 21);
+    margin-bottom: 10px;
+
+}
+
+.post p{
+    font-size: 18px;
+}

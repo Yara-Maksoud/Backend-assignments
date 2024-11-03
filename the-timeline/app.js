@@ -9,7 +9,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 //listen for requests
-app.listen(port, () => {console.log('Server is running on port ${port}');})
+app.listen(port, () => {console.log(`portServer is running on port ${port}`);})
 
 app.use(express.static('public'));
 app.use('/', routes);

@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Time Line</title>
-</head>
+<%- include("head") %>
 <body>
     <h1>Time Line</h1>
-    <div class = "content">
+    <div>
+        <form class="newPost" action="/add-new-post" method="POST">
+            <label for="userName">User name</label>
+            <input type="text" name="userName" id="userName" placeholder="Enter your user name" required>
+        
+            <label for="message">Post a message</label>
+            <textarea  name="message" id="message" minlength="25" placeholder="Write your message here" required></textarea>
+
+            <button>Post</button>
+        </form>
+    </div>
+    <div class = "posts">
         <% if(data.length > 0) { %>
-            <%data.forEach(user => { %>
+            <%data.forEach(post => { %>
                 <div class = "post">
-                    <h3><%= user.name%> <%= user.createdAt %></h3>
-                    <p><%= user.message %></p>
-                </div>
-                
+                    <h3><a href="/view-post/<%= post._id %>"><%= post.userName%></a><span><%= post.createdAt %></span></h3>                    
+                    <p><%= post.message %></p>
+                    <a href="/delete-post/<%= post._id %>">Delete</a>
+                </div>                
             <% }) %>
         <% } else { %>
                 <p>There is no posts</p>

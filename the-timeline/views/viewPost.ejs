@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head") %>
+<body>
+    <h1>View Post</h1>
+
+        <div class="post">
+            <h3><%= post.userName%><span><%= post.createdAt %></span></h3>
+            <p><%= post.message %></p>
+            <a href="/"><button>Back</button></a>
+        </div>
+  
+</body>
+
+</html>

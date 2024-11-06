@@ -15,18 +15,53 @@ h1{
     margin-bottom: 30px;
 }
 
-.content{
+.posts{
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.post h3{
+.post a, h3{
     color: rgb(139, 21, 21);
     margin-bottom: 10px;
+    text-decoration: none;
 
+}
+
+.post h3 span{
+    color: rgb(99, 99, 99);
+    margin-left: 20px;
+    font-size: 14px;
 }
 
 .post p{
     font-size: 18px;
+}
+
+.newPost{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+ button{
+    width: 10%;
+    height: 25px;
+    font-weight: bold;
+    color: white;
+    background-color:rgb(119, 43, 43);
+    margin-top: 20px;
+}
+
+#userName{
+    height: 25px;
+    width: 80%;
+    border: solid 2px black;
+}
+
+#message{
+    height: 100px;
+    width: 80%;
+    border: solid 2px black;
 }

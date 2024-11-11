@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 
 const postSchema = new mongoose.Schema({
     userName: {
@@ -12,8 +13,16 @@ const postSchema = new mongoose.Schema({
     createdAt : {
         type : Date,
         require : false,
-        default :  Date.now()
-    }
+        default :  Date.now(),
+        get: (created_at) => moment(created_at).format("MMM Do YYYY, hh:mm:ss a")
+        
+    },
+    comments: [{
+        type: mongoose.Schema.ObjectId,
+        ref: "comment"
+    }]
 });
+
+
 
 module.exports = mongoose.model("post", postSchema);
